@@ -1,124 +1,117 @@
-<main class="container  ">
-
-	<section>
-		<form id="formRegistro">
-			<div class="form-group row w-50 m-auto">
-				<div class="form-group col-12 col-sm-6">
-					<label>Nombre</label>
-					<input class="form-control m-auto" type="text" name="nombre"  id="nombre" required />
-				</div>
-				<div class="form-group col-12 col-sm-6">
-					<label>Apellido</label>
-					<input class="form-control m-auto" type="text" name="apellido"id="apellido" required />
-				</div>
-				<div class="form-group col-12 col-sm-6">
-					<label>Rut:</label>
-					<input class="form-control m-auto" type="text" name="apellido" id="rut" required />
-				</div>
-				<div class="form-group col-12 col-sm-6">
-					<label>Email</label>
-					<input class="form-control m-auto" type="email" name="email" id="email" required />
-				</div>
-				<div class="form-group col-12 col-sm-6">
-					<label>Password</label>
-					<input class="form-control m-auto" type="password" name="password" id="password" required />
-				</div>
-				<div class="form-group col-12 col-sm-6">
-					<label>Repita la password</label>
-					<input class="form-control m-auto" type="password" name="replyPassword" required />
-				</div>
-				<div>
-
-				</div>
-				<div class=" text-center d-flex m-2 col-12 col-sm-8 m-4">
-					<p class="text-center m-2">Telefono</p>
-					<select >
-						<option value="">Paises</option>
-						<option value="+54">ARGENTINA</option>
-						<option value="+56">CHILE</option>
-						<option value="+52">MEXICO</option>
-					</select>
-					<br>
-					<input class="form-control m-auto" type="text" id="telf" />
-				</div>
-				<div class="form-group col-12 col-sm-12">
-					<label>Foto de perfil</label>
-					<input type="file" name="imagen" id="imagen" />
-				</div>
-
-
-				<hr class="py-2 my-4">
-			</div>
-			<h3 class="text-center">Direccion</h3>
-			<div class="form-group row w-50 m-auto">
-				<div class="form-group col-12 col-sm-6">
-					<label>Calle</label>
-					<input class="form-control m-auto" type="text" name="nombre" id="calle" required />
-				</div>
-				<div class="form-group col-12 col-sm-6">
-					<label>N° Casa / Departamento</label>
-					<input class="form-control m-auto" type="text" name="apellido"id="numero" required />
-				</div>
-
-				<div class="form-group col-12 col-sm-6">
-					<label>Comuna</label>
-					<input class="form-control m-auto" type="text" name="region" id="comuna" required />
-				</div>
-				<div class="form-group col-12 col-sm-6">
-					<label>Region</label>
-					<input class="form-control m-auto" type="text" name="region" id="region" required />
-				</div>
-				<div class="form-group col-12 col-sm-6">
-					<label>Pais</label>
-					<input class="form-control m-auto" type="text" name="pais" id="pais" required />
-				</div>
-
-			</div>
-
-
-		</form>
-		</div>
-		<div class="d-flex justify-content-center py-4 px-4 ">
-			<button class="btn btn-info mb-3" type="submit">Registrarme</button>
-			<p><a class="m-4" href="/login"> Iniciar sesión</a></p>
-
-		</div>
-
-	</section>
+<main class="container">
+    <section>
+        <form id="formRegistro">
+            <div class="form-group row w-50 m-auto">
+                <div class="form-group col-12 col-sm-6">
+                    <label for="nombre">Nombre</label>
+                    <input class="form-control m-auto" type="text" name="nombre" id="nombre" required />
+                </div>
+                <div class="form-group col-12 col-sm-6">
+                    <label for="apellido">Apellido</label>
+                    <input class="form-control m-auto" type="text" name="apellido" id="apellido" required />
+                </div>
+                <div class="form-group col-12 col-sm-6">
+                    <label for="rut">Rut</label>
+                    <input class="form-control m-auto" type="text" name="rut" id="rut" required />
+                </div>
+                <div class="form-group col-12 col-sm-6">
+                    <label for="email">Email</label>
+                    <input class="form-control m-auto" type="email" name="email" id="email" required />
+                </div>
+                <div class="form-group col-12 col-sm-6">
+                    <label for="password">Password</label>
+                    <input class="form-control m-auto" type="password" name="password" id="password" required />
+                </div>
+                <div class="form-group col-12 col-sm-6">
+                    <label for="replyPassword">Repita la password</label>
+                    <input class="form-control m-auto" type="password" name="replyPassword" id="replyPassword" required />
+                </div>
+                <div class="text-center d-flex m-2 col-12 col-sm-8 m-4">
+                    <p class="text-center m-2">Telefono</p>
+                    <select name="countryCode">
+                        <option value="">Paises</option>
+                        <option value="+54">ARGENTINA</option>
+                        <option value="+56">CHILE</option>
+                        <option value="+52">MEXICO</option>
+                    </select>
+                    <br>
+                    <input class="form-control m-auto" type="text" name="telf" id="telf" />
+                </div>
+                <div class="form-group col-12 col-sm-12">
+                    <label for="imagen">Foto de perfil</label>
+                    <input type="file" name="imagen" id="imagen" />
+                </div>
+                <hr class="py-2 my-4">
+            </div>
+            <h3 class="text-center">Direccion</h3>
+            <div class="form-group row w-50 m-auto">
+                <div class="form-group col-12 col-sm-6">
+                    <label for="calle">Calle</label>
+                    <input class="form-control m-auto" type="text" name="calle" id="calle" required />
+                </div>
+                <div class="form-group col-12 col-sm-6">
+                    <label for="numero">N° Casa / Departamento</label>
+                    <input class="form-control m-auto" type="text" name="numero" id="numero" required />
+                </div>
+                <div class="form-group col-12 col-sm-6">
+                    <label for="comuna">Comuna</label>
+                    <input class="form-control m-auto" type="text" name="comuna" id="comuna" required />
+                </div>
+                <div class="form-group col-12 col-sm-6">
+                    <label for="region">Region</label>
+                    <input class="form-control m-auto" type="text" name="region" id="region" required />
+                </div>
+                <div class="form-group col-12 col-sm-6">
+                    <label for="pais">Pais</label>
+                    <input class="form-control m-auto" type="text" name="pais" id="pais" required />
+                </div>
+            </div>
+        </form>
+    </section>
+    <div class="d-flex justify-content-center py-4 px-4">
+        <button class="btn btn-info mb-3" type="submit" form="formRegistro">Registrarme</button>
+        <p><a class="m-4" href="/login">Iniciar sesión</a></p>
+    </div>
 </main>
 <link rel="stylesheet" href="/css/login.css">
-{{!-- <script type="module" src="/js/telf.js"></script> --}}
 
 <script>
-	const formRegistro = document.getElementById("formRegistro");
+    const formRegistro = document.getElementById("formRegistro");
 
+    // Agregar el evento submit al formulario
     formRegistro.addEventListener("submit", async (event) => {
-        try{
+        try {
+            // Prevenir la ejecución automática del evento
             event.preventDefault();
 
-            let formData = new FormData(formRegistro);	
-			console.log(formData);
-            //if(formData.get("password") != formData.get("replyPassword")){
-               // return alert("Los password no coinciden.");
-            //
+            // Capturar la información del formulario
+            let formData = new FormData(formRegistro);
 
+            // Verificar que las contraseñas coincidan
+            if (formData.get("password") !== formData.get("replyPassword")) {
+                return alert("Las contraseñas no coinciden.");
+            }
+
+            // Enviar los datos del formulario a la ruta /registro
             let response = await fetch("/registro", {
                 method: "POST",
                 body: formData
             });
 
+            // Guardar la respuesta
             let data = await response.json();
 
+            // Mostrar el mensaje de respuesta
             alert(data.message);
 
-            if(response.status == 201){
-                location.href="/login";
+            // Si el registro fue exitoso, redirigir al login
+            if (response.status === 201) {
+                location.href = "/login";
             }
-
-        }catch(error){
-          console.log(error);
+        } catch (error) {
+            console.log(error);
             alert("Error al intentar registrar al usuario.");
         }
-    })
-    
+    });
 </script>
+

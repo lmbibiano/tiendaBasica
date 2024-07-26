@@ -34,11 +34,11 @@ app.use(express.static("public"));
 import homeRouter from './routes/home.js';
 import loginRouter from './routes/login.js';
 import registroRouter from './routes/registro.js';
-import registroRouter from './routes/adminrepuest.js';
-import registroRouter from './routes/adminproduct.js';
+import adminrepuestosRouter from './routes/adminrepuestos.js';
+import adminproductosRouter from './routes/adminproductos.js';
 
 app.use('/', homeRouter);
 app.use('/login', loginRouter);
 app.use('/registro', registroRouter);
-app.use('/api/v1/adminrepuest', adminrepuestRouter);
-app.use('/apir/v1/adminproduct', adminProductRouter);
+app.use('/adminrepuestos', adminrepuestosRouter);
+app.use('/adminproductos', adminproductosRouter);

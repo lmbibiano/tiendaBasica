@@ -3,13 +3,13 @@ const { Pool } = pg
 
 const pool = new Pool({
   user: 'postgres',
-  password: 'xxxxxx',
+  password: '123456',
   host: 'localhost',
   port: 5432,
-  database: 'xxxxxx',
+  database: 'tienda_basica',
 });
 
-//let {rows}=await pool.query("SELECT NOW()");  
-//console.log(rows);
+let {rows}=await pool.query("SELECT NOW()");  
+console.log(rows);
 
 export default pool;

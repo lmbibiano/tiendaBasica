@@ -1,0 +1,4 @@
+label, select, .select2-container, .select2-drop {
+    width: 50%;
+    min-width: 200px;
+}

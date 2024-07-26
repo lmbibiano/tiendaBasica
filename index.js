@@ -1,0 +1,44 @@
+import express from "express";
+import { create } from "express-handlebars";
+import fileUpload from 'express-fileupload';
+import { v4 as uuid } from 'uuid';
+import db from "./database/config.js";
+import fs from "fs";
+import morgan from "morgan";
+import * as path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const app = express();
+
+const hbs = create({
+    partialsDir: [
+        path.resolve(__dirname, "./views/partials/"),
+    ],
+});
+
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
+app.set("views", path.resolve(__dirname, "./views"));
+
+app.listen(3010, () => {
+    console.log("Servidor escuchando en http://localhost:3010");
+});
+
+// MIDDLEWARES GENERALES
+app.use(express.json());
+app.use(express.static("public"));
+
+// Rutas
+import homeRouter from './routes/home.js';
+import loginRouter from './routes/login.js';
+import registroRouter from './routes/registro.js';
+import registroRouter from './routes/adminrepuest.js';
+import registroRouter from './routes/adminproduct.js';
+
+app.use('/', homeRouter);
+app.use('/login', loginRouter);
+app.use('/registro', registroRouter);
+app.use('/api/v1/adminrepuest', adminrepuestRouter);
+app.use('/apir/v1/adminproduct', adminProductRouter);

@@ -1,0 +1,83 @@
+<main class="container  ">
+
+	<section>
+		<form id="formRegistro">
+			<div class="form-group row w-50 m-auto">
+				<div class="form-group col-12 col-sm-6">
+					<label>Nombre</label>
+					<input class="form-control m-auto" type="text" name="nombre" required />
+				</div>
+				<div class="form-group col-12 col-sm-6">
+					<label>Apellido</label>
+					<input class="form-control m-auto" type="text" name="apellido" required />
+				</div>
+				<div class="form-group col-12 col-sm-6">
+					<label>Rut:</label>
+					<input class="form-control m-auto" type="text" name="apellido" required />
+				</div>
+				<div class="form-group col-12 col-sm-6">
+					<label>Email</label>
+					<input class="form-control m-auto" type="email" name="email" required />
+				</div>
+				<div class="form-group col-12 col-sm-6">
+					<label>Password</label>
+					<input class="form-control m-auto" type="password" name="password" required />
+				</div>
+				<div class="form-group col-12 col-sm-6">
+					<label>Repita la password</label>
+					<input class="form-control m-auto" type="password" name="replyPassword" required />
+				</div>
+				<div>
+
+				</div>
+				<div class=" col-12 col-sm-8 m-4">
+					Telefono
+					<select id="pais">
+						<option value="">Paises</option>
+						<option value="+54">ARGENTINA</option>
+						<option value="+56">CHILE</option>
+						<option value="+52">MEXICO</option>
+					</select>
+					<br>
+					<input class="form-control m-auto" type="text" id="telf" disabled="disabled" />
+				</div>
+
+
+				<hr class="py-2 my-4">
+			</div>
+			<h3 class="text-center">Direccion</h3>
+			<div class="form-group row w-50 m-auto">
+				<div class="form-group col-12 col-sm-6">
+					<label>Calle</label>
+					<input class="form-control m-auto" type="text" name="nombre" required />
+				</div>
+				<div class="form-group col-12 col-sm-6">
+					<label>N° Casa / Departamento</label>
+					<input class="form-control m-auto" type="text" name="apellido" required />
+				</div>
+				
+			<div class="form-group col-12 col-sm-6">
+				<label>Comuna</label>
+				<input class="form-control m-auto" type="text" name="region" required />
+			</div>
+			<div class="form-group col-12 col-sm-6">
+				<label>Region</label>
+				<input class="form-control m-auto" type="text" name="region" required />
+			</div>
+
+			</div>
+
+
+		</form>
+		</div>
+		<div class="d-flex justify-content-center py-4 px-4 ">
+			<button class="btn btn-info mb-3">Registrarme</button>
+			<p><a class="m-4" href="/login"> Iniciar sesión</a></p>
+
+		</div>
+
+	</section>
+</main>
+<link rel="stylesheet" href="/css/login.css">
+<script type="module" src="/js/telf.js"></script>
+<script type="module" src="/js/regiones.js"></script>

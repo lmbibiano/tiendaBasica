@@ -11,6 +11,7 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
+const port = process.env.PORT || 3010;
 
 const hbs = create({
     partialsDir: [
@@ -23,7 +24,7 @@ app.set("view engine", "handlebars");
 app.set("views", path.resolve(__dirname, "./views"));
 
 app.listen(3010, () => {
-    console.log("Servidor escuchando en http://localhost:3010");
+    console.log('Servidor escuchando en http://localhost:'+ port);
 });
 
 // MIDDLEWARES GENERALES

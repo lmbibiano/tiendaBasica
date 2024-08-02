@@ -2,7 +2,7 @@ import express from "express";
 import { create } from "express-handlebars";
 import fileUpload from 'express-fileupload';
 import { v4 as uuid } from 'uuid';
-import db from "./database/config.js";
+import Pool from "./database/config.js";
 import fs from "fs";
 import morgan from "morgan";
 import * as path from "path";
@@ -29,7 +29,8 @@ app.listen(3010, () => {
 // MIDDLEWARES GENERALES
 app.use(express.json());
 app.use(express.static("public"));
-
+app.use(express.urlencoded({ extended: true }));
+app.use(fileUpload()); // Para parsear application/x-www-form-urlencoded si aún es necesario
 // Rutas
 import homeRouter from './routes/home.js';
 import loginRouter from './routes/login.js';

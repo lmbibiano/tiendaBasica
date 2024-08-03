@@ -1,6 +1,78 @@
-<main>
-
-    <section  class="vh-100">
-        
-    </section>
+    <main class="container vh-100 text-center">
+        <section class=" row align-items-center justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                
+                <form id="formProducto" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="categoria">Categoria</label>
+                        <select class="form-control" id="categoria" name="categoria" required>
+                            <option value="">Elige una opción</option>
+                            <option value="1">Celulares</option>
+                            <option value="2">Notebook</option>
+                            <option value="3">Impresoras</option>
+                            <option value="4">Tabletas</option>
+                            <option value="5">Repuestos</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="marca">Marca</label>
+                        <select class="form-control" id="marca" name="marca" required>
+                            <option value="">Elige una opción</option>
+                            <option value="1">Samsung</option>
+                            <option value="2">Apple</option>
+                            <option value="3">HP</option>
+                            <option value="4">Dell</option>
+                            <option value="5">Canon</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre-modelo">Nombre del Modelo</label>
+                        <input type="text" class="form-control" id="nombre-modelo" name="nombre-modelo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <textarea class="form-control" id="descripcion" name="descripcion" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="stock">Stock</label>
+                        <input type="number" class="form-control" id="stock" name="stock" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="precio">Precio</label>
+                        <input type="number" step="0.01" class="form-control" id="precio" name="precio" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="imagen">Imagen</label>
+                        <input type="file" class="form-control-file" id="imagen" name="imagen" accept="image/*" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Agregar Producto</button>
+                </form>
+            </div>
+        </section>
+    </main>
 </main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Manejar el envío del formulario de producto
+        document.getElementById('form-producto').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData();
+            formData.append('nombre_tipo_producto', document.getElementById('nombre-tipo-producto').value);
+            formData.append('nombre_marca', document.getElementById('nombre-marca').value);
+            formData.append('nombre_modelo', document.getElementById('nombre-modelo').value);
+            formData.append('descripcion', document.getElementById('descripcion').value);
+            formData.append('stock', document.getElementById('stock').value);
+            formData.append('precio', document.getElementById('precio').value);
+            formData.append('imagen', document.getElementById('imagen').files[0]);
+
+            fetch('/api/productos', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.json()).then(data => {
+                alert('Producto agregado correctamente');
+            });
+        });
+    });
+</script>

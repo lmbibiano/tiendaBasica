@@ -1,4 +1,4 @@
-const formRegistro = document.getElementById("formRegistro");
+const formRegistro = document.getElementById("formProduct");
 
 formRegistro.addEventListener("submit", async (event) => {
     event.preventDefault();

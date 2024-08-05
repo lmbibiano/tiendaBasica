@@ -1,17 +1,14 @@
-const formRegistro = document.getElementById("formProduct");
+const formProduct = document.getElementById("formProduct");
 
-formRegistro.addEventListener("submit", async (event) => {
+formProduct.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    let formData = new FormData(formRegistro);
-    if (formData.get("password") !== formData.get("replyPassword")) {
-        return alert("Las contraseñas no coinciden.");
-    }
+    let formData = new FormData(formProduct);
 
     try {
         let urlEncodedData = new URLSearchParams(formData);
         console.log(formData)
-        let response = await fetch("/registro", {
+        let response = await fetch("/admin/product", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
@@ -25,7 +22,7 @@ formRegistro.addEventListener("submit", async (event) => {
             alert("Registro exitoso");
             location.href = "/login";
         } else {
-            alert(data.message || "Error al registrar al usuario");
+            alert(data.message || "Error al registrar producto");
             console.log(data.error);
         }
     } catch (error) {

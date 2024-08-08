@@ -3,7 +3,8 @@ import  pool  from '../database/config.js';
 const router = Router();
 
 router.get('/', (req, res) => {
-    res.render("login", { title: 'Login' });
+    res.render("login", { 
+        title: 'Login' });
 });
 
 router.post('/', async (req, res) => {

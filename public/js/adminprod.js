@@ -8,7 +8,7 @@ formProduct.addEventListener("submit", async (event) => {
     try {
         let urlEncodedData = new URLSearchParams(formData);
         console.log(formData)
-        let response = await fetch("/admin/product", {
+        let response = await fetch("/adminproductos", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",

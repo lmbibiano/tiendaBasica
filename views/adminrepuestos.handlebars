@@ -52,27 +52,4 @@
     </main>
 </main>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Manejar el envío del formulario de producto
-        document.getElementById('form-producto').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const formData = new FormData();
-            formData.append('nombre_tipo_producto', document.getElementById('nombre-tipo-producto').value);
-            formData.append('nombre_marca', document.getElementById('nombre-marca').value);
-            formData.append('nombre_modelo', document.getElementById('nombre-modelo').value);
-            formData.append('descripcion', document.getElementById('descripcion').value);
-            formData.append('stock', document.getElementById('stock').value);
-            formData.append('precio', document.getElementById('precio').value);
-            formData.append('imagen', document.getElementById('imagen').files[0]);
-
-            fetch('/api/productos', {
-                method: 'POST',
-                body: formData
-            }).then(response => response.json()).then(data => {
-                alert('Producto agregado correctamente');
-            });
-        });
-    });
-</script>
+<script src="/public/js/adminprod.js"></script>

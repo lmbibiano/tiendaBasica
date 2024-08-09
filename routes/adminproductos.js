@@ -54,7 +54,7 @@ router.post('/', async (req, res) => {
         // Insertar o encontrar categoría
         let categoriaId;
         let categoriaResult = await pool.query(
-            'SELECT id FROM categoria WHERE nombre = $1',
+            'SELECT id FROM tipo_producto WHERE nombre = $1',
             [categoria]
         );
 
@@ -62,7 +62,7 @@ router.post('/', async (req, res) => {
             categoriaId = categoriaResult.rows[0].id;
         } else {
             let insertCategoriaResult = await pool.query(
-                'INSERT INTO categoria (nombre) VALUES ($1) RETURNING id',
+                'INSERT INTO tipo_producto (nombre) VALUES ($1) RETURNING id',
                 [categoria]
             );
             categoriaId = insertCategoriaResult.rows[0].id;
@@ -71,7 +71,7 @@ router.post('/', async (req, res) => {
         // Insertar o encontrar marca
         let marcaId;
         let marcaResult = await pool.query(
-            'SELECT id FROM marcas WHERE nombre = $1',
+            'SELECT id FROM marca WHERE nombre = $1',
             [marca]
         );
 
@@ -79,7 +79,7 @@ router.post('/', async (req, res) => {
             marcaId = marcaResult.rows[0].id;
         } else {
             let insertMarcaResult = await pool.query(
-                'INSERT INTO marcas (nombre) VALUES ($1) RETURNING id',
+                'INSERT INTO marca (nombre) VALUES ($1) RETURNING id',
                 [marca]
             );
             marcaId = insertMarcaResult.rows[0].id;
@@ -87,7 +87,7 @@ router.post('/', async (req, res) => {
 
         // Inserción en la tabla de productos
         let { rows } = await pool.query(
-            'INSERT INTO productos (categoria_id, marca_id, modelo, descripcion, stock, precio, imagen) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id',
+            'INSERT INTO modelo (categoria_id, marca_id, nombre, descripcion, stock, precio, imagen) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id',
             [categoriaId, marcaId, modelo, descripcion, stock, precio, imagen]
         );
         let productoId = rows[0].id;
@@ -106,5 +106,8 @@ router.post('/', async (req, res) => {
         res.status(500).json({ error: 'Error al registrar el producto' });
     }
 });
+
+
+
 
 export default router;

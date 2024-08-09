@@ -1,6 +1,6 @@
 <main class="container text-center">
     <h1 class="text-center">Bienvenido a mi aplicación con Express y Handlebars!</h1>
-            <a href="/login">Login</a> | <a href="/register">Registro</a>
+            <a href="/login">Login</a> | <a href="/registro">Registro</a>
  {{#if error}}
         <section>
             <p>{{error}}</p>
@@ -11,7 +11,7 @@
     <h1 class="text-center py-3">Listado de productos</h1>
     </header>
     <section class="filtros py-3">
-                <form action="/productos">
+                <form action="/" method="get">
                     {{!-- INICIO NOMBRE --}}
                     <input type="text" placeholder="Nombre o Descripción" name="nombre">
                     {{!-- FIN NOMBRE --}}

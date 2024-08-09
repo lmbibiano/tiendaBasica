@@ -1,4 +1,4 @@
-const formProduct = document.getElementById("formProduct");
+const formProduct = document.getElementById("formProducto");
 
 formProduct.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -20,13 +20,13 @@ formProduct.addEventListener("submit", async (event) => {
 
         if (response.status === 201) {
             alert("Registro exitoso");
-            location.href = "/login";
+            location.href = "/adminproductos";
         } else {
             alert(data.message || "Error al registrar producto");
             console.log(data.error);
         }
     } catch (error) {
-        console.error("Error de conexión:", error);
+        //console.error("Error de conexión:", error);
         alert("Error de conexión. Por favor, inténtalo nuevamente.");
     }
 });

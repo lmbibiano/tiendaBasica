@@ -54,7 +54,7 @@ router.post('/', async (req, res) => {
         // Insertar o encontrar categoría
         let categoriaId;
         let categoriaResult = await pool.query(
-            'SELECT id FROM categorias WHERE nombre = $1',
+            'SELECT id FROM categoria WHERE nombre = $1',
             [categoria]
         );
 
@@ -62,7 +62,7 @@ router.post('/', async (req, res) => {
             categoriaId = categoriaResult.rows[0].id;
         } else {
             let insertCategoriaResult = await pool.query(
-                'INSERT INTO categorias (nombre) VALUES ($1) RETURNING id',
+                'INSERT INTO categoria (nombre) VALUES ($1) RETURNING id',
                 [categoria]
             );
             categoriaId = insertCategoriaResult.rows[0].id;

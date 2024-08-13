@@ -38,9 +38,12 @@ import loginRouter from './routes/login.js';
 import registroRouter from './routes/registro.js';
 import adminrepuestosRouter from './routes/adminrepuestos.js';
 import adminproductosRouter from './routes/adminproductos.js';
+import detalleRouter from './routes/detalle.js';
 
 app.use('/', homeRouter);
 app.use('/login', loginRouter);
 app.use('/registro', registroRouter);
 app.use('/adminrepuestos', adminrepuestosRouter);
 app.use('/adminproductos', adminproductosRouter);
+app.use('/detalle', detalleRouter);
+
